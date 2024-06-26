@@ -1,0 +1,19 @@
+@import url(variables.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "EncodeSans-Regular";
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--color-1), var(--color-2));
+}
+
+
+#dataDisplay{
+    color: white
+}
+
