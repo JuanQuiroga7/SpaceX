@@ -39,7 +39,7 @@ body, html {
 #rocketImageCenter{
     position: absolute;
     top: 10%;
-    left: 37%;
+    left: 39.5%;
     width: 20vw;
     
     
@@ -100,12 +100,12 @@ body, html {
 }
 
 .nav__description {
-    /* background: red; */
+    /* background: green; */
     grid-area: nav__1;
 }
 
 .description__item {
-    /* background: blue; */
+    /* background: yellow; */
     height: 75vh;
     color: var(--color--five);
     margin-left: 15px
@@ -339,7 +339,7 @@ h3{
 .section__information__2 div:first-child>.carousel__item {
     /* flex: 1; */
     min-width: 48%;
-    /* background-color: purple; */
+    background-color: purple;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -564,19 +564,21 @@ h3{
     display: inline-block;
 }
 
-.buttom__paginacion a {
+.information__buttom a {
     color: var(--color--five);
+    font-size: 1.5rem;
+    backdrop-filter: blur(10px);
     text-decoration: none;
     float: left;
     padding: 8px 16px;
 }
 
-.buttom__paginacion a.activo {
+.information__buttom a.activo {
     background-color: var(--color--one);
     color: var(--color--five);
 }
 
-.buttom__paginacion a:hover:not(.activo) {
+.information__buttom a:hover:not(.activo) {
     background-color: var(--color--one--rgba);
 }
 
