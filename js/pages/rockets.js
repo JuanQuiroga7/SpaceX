@@ -1,5 +1,5 @@
 import { fetchAllRocketsData, fetchSingleRocketData } from '../api.js';
-import { updateHeaderTitle, updateInformation2, updatePagination } from '../UI/rocketsUI.js';
+import { updateHeaderTitle, updateInformation2, updateDescription, updatePagination } from '../UI/rocketsUI.js';
 
 export async function updatePage(page) {
     const loadingElements = document.querySelectorAll('.load');
@@ -27,6 +27,7 @@ export async function updatePage(page) {
                 item.height.meters, maxHeight, item.height.feet, item.diameter.meters, maxDiameter, item.diameter.feet, 
                 item.second_stage.payloads.composite_fairing.diameter.meters, maxShieldDiameter, item.second_stage.payloads.composite_fairing.diameter.feet, 
                 item.second_stage.payloads.composite_fairing.height.meters, maxShieldHeight, item.second_stage.payloads.composite_fairing.height.feet);
+            updateDescription(item.id, item.description);
         });
 
         loadingElements.forEach(element => {

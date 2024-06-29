@@ -102,6 +102,23 @@ if (shieldDiameterMeters && shieldHeightMeters) {
     `;
 }
 
+// Funcion para insertar la informacion de la seccion izquierda en el DOM
+export function updateDescription(rocketId, rocketDescription) {
+    const descriptionItem = document.getElementById('description__item');
+
+    let descriptionHTML = `
+        <div class="rocket__id">
+        <p id="id_rocket">Rocket ID: ${rocketId}</p>
+        </div>
+        <h3 id="description__title">Description</h3>
+        <div class="each_rocket__description">${rocketDescription}</div>
+        <h3 id="stages__title">Stages</h3>
+        <div class="stages__container"></div>
+    `;
+
+    descriptionItem.innerHTML = descriptionHTML;
+}
+
 
 // Funcion para insertar la paginacion en el DOM
 export function updatePagination(data, updatePage) {
