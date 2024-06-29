@@ -547,7 +547,8 @@ h3{
 }
 
 .information__item {
-    /* background: violet; */
+    /* background: ; */
+    backdrop-filter: blur(10px);
     overflow-y: auto;
     height: 75vh;
 }
