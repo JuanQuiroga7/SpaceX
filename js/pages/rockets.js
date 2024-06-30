@@ -28,7 +28,8 @@ export async function updatePage(page) {
                 item.second_stage.payloads.composite_fairing.diameter.meters, maxShieldDiameter, item.second_stage.payloads.composite_fairing.diameter.feet, 
                 item.second_stage.payloads.composite_fairing.height.meters, maxShieldHeight, item.second_stage.payloads.composite_fairing.height.feet);
             updateDescription(item.id, item.description, item.first_stage.reusable, item.first_stage.fuel_amount_tons, item.first_stage.engines, 
-                item.second_stage.reusable, item.second_stage.fuel_amount_tons, item.second_stage.engines);
+                item.second_stage.reusable, item.second_stage.fuel_amount_tons, item.second_stage.engines, item.first_flight, item.cost_per_launch, 
+                item.active);
         });
 
         loadingElements.forEach(element => {

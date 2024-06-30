@@ -103,8 +103,36 @@ if (shieldDiameterMeters && shieldHeightMeters) {
 }
 
 // Funcion para insertar la informacion de la seccion izquierda en el DOM
-export function updateDescription(rocketId, rocketDescription, Stage1_reusable, Stage1_fuel, Stage1_engines, Stage2_reusable, Stage2_fuel, Stage2_engines) {
+export function updateDescription(rocketId, rocketDescription, Stage1_reusable, Stage1_fuel, Stage1_engines, Stage2_reusable, 
+    Stage2_fuel, Stage2_engines, first_flight, cost_per_launch, active) {
     const descriptionItem = document.getElementById('description__item');
+    
+    let activeHTML = '';
+    if (active===true) {
+        activeHTML = `
+        <div class="status">
+            <div class="icon">
+                <img src="https://cdn-icons-png.freepik.com/512/889/889727.png?uid=R147375896&ga=GA1.1.561037085.1719784258" alt="">
+            </div>
+            <div class="text">
+                <h4 id="status_title">Rocket status</h4>
+                <p id="status_rocket">Active</p>
+            </div>
+        </div>
+        `;
+    } else {
+        activeHTML = `
+        <div class="status">
+            <div class="icon">
+                <img src="https://cdn-icons-png.freepik.com/512/889/889731.png?uid=R147375896&ga=GA1.1.561037085.1719784258" alt="">
+            </div>
+            <div class="text">
+                <h4 id="status_title">Rocket status</h4>
+                <p id="status_rocket">Not active</p>
+            </div>
+        </div>
+        `;
+    }
 
     let descriptionHTML = `
         <div class="rocket__id">
@@ -135,7 +163,28 @@ export function updateDescription(rocketId, rocketDescription, Stage1_reusable, 
                 </div>
             </div>
         </div>
-        
+        <h3 id="more_information">More Information</h3>
+        <div class="more_information_rocket">
+            <div class="first_flight">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.freepik.com/512/473/473161.png?uid=R147375896&ga=GA1.1.561037085.1719784258" alt="">
+                </div>
+                <div class="text">
+                    <h4 id="first_flight_title">First flight</h4>
+                    <p id="date_first_flight">${first_flight}</p>
+                </div>
+            </div>
+            <div class="cost_launch">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.freepik.com/512/4106/4106601.png?uid=R147375896&ga=GA1.1.561037085.1719784258"" alt="">
+                </div>
+                <div class="text">
+                    <h4 id="cost_launch_title">Cost of launch</h4>
+                    <p id="cost_dollars">$ ${cost_per_launch}</p>
+                </div>
+            </div>
+            ${activeHTML}
+        </div>
     `;
 
     descriptionItem.innerHTML = descriptionHTML;
