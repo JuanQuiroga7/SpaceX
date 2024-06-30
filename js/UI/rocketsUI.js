@@ -103,17 +103,39 @@ if (shieldDiameterMeters && shieldHeightMeters) {
 }
 
 // Funcion para insertar la informacion de la seccion izquierda en el DOM
-export function updateDescription(rocketId, rocketDescription) {
+export function updateDescription(rocketId, rocketDescription, Stage1_reusable, Stage1_fuel, Stage1_engines, Stage2_reusable, Stage2_fuel, Stage2_engines) {
     const descriptionItem = document.getElementById('description__item');
 
     let descriptionHTML = `
         <div class="rocket__id">
-        <p id="id_rocket">Rocket ID: ${rocketId}</p>
+            <p id="id_rocket">Rocket ID: ${rocketId}</p>
         </div>
         <h3 id="description__title">Description</h3>
         <div class="each_rocket__description">${rocketDescription}</div>
         <h3 id="stages__title">Stages</h3>
-        <div class="stages__container"></div>
+        <div class="stages__container">
+            <div class="stage_1">
+                <div class="stage__photo">
+                    <img src="https://cdn-icons-png.freepik.com/512/13153/13153777.png?uid=R147375896&ga=GA1.1.561037085.1719784258" alt="">
+                </div>
+                <div class="stage__information">
+                    <p id="1_reusableStage"><b>Reusable: ${Stage1_reusable}</b></p>
+                    <p id="1_fuel"><b>Fuel tons: ${Stage1_fuel}</b></p>
+                    <p id="1_engines"><b>Engines: ${Stage1_engines}</b></p>
+                </div>
+            </div>
+            <div class="stage_2">
+                <div class="stage__photo">
+                    <img src="https://cdn-icons-png.freepik.com/512/13153/13153824.png?uid=R147375896&ga=GA1.1.561037085.1719784258" alt="">
+                </div>
+                <div class="stage__information">
+                    <p id="2_reusableStage"><b>Reusable: ${Stage2_reusable}</b></p>
+                    <p id="2_fuel"><b>Fuel tons: ${Stage2_fuel}</b></p>
+                    <p id="2_engines"><b>Engines: ${Stage2_engines}</b></p>
+                </div>
+            </div>
+        </div>
+        
     `;
 
     descriptionItem.innerHTML = descriptionHTML;

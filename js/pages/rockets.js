@@ -27,7 +27,8 @@ export async function updatePage(page) {
                 item.height.meters, maxHeight, item.height.feet, item.diameter.meters, maxDiameter, item.diameter.feet, 
                 item.second_stage.payloads.composite_fairing.diameter.meters, maxShieldDiameter, item.second_stage.payloads.composite_fairing.diameter.feet, 
                 item.second_stage.payloads.composite_fairing.height.meters, maxShieldHeight, item.second_stage.payloads.composite_fairing.height.feet);
-            updateDescription(item.id, item.description);
+            updateDescription(item.id, item.description, item.first_stage.reusable, item.first_stage.fuel_amount_tons, item.first_stage.engines, 
+                item.second_stage.reusable, item.second_stage.fuel_amount_tons, item.second_stage.engines);
         });
 
         loadingElements.forEach(element => {
