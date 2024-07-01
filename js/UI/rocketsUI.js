@@ -192,7 +192,7 @@ export function updateDescription(rocketId, rocketDescription, Stage1_reusable, 
 
 
 // Funcion para insertar section 2 en el DOM
-export function updateSectionInformation2(country_name) {
+export function updateSectionInformation2(country_name, Type, active, stages, boosters, landing_legs, rocket_material) {
     const sectionInformation2 = document.getElementById('section__information__2');
     let flagHTML = '';
     if (country_name === 'United States') {
@@ -208,6 +208,19 @@ export function updateSectionInformation2(country_name) {
         </div>
         `;
     }
+    let service;
+    if (active===true) {
+        service = "Active";
+    } else {
+        service = "OOS";
+    }
+    let material;
+    if (rocket_material === null) {
+        material = "unknown";
+    } else {
+        material = rocket_material;
+    }
+
     sectionInformation2.innerHTML = `
         <div id="country_rocket">
             <div class="divCountry">
@@ -215,6 +228,36 @@ export function updateSectionInformation2(country_name) {
                 <div class="informationCountry">
                     <h2>Country of origin</h2>
                     <p>${country_name}</p>
+                </div>
+            </div>
+        </div>
+        <div id="information__table__1" class="information__table__1">
+            <h3>Rocket Information</h3>
+            <hr>
+            <div class="table__container__1">
+                <div>
+                    <span>Type:</span>
+                    <strong>${Type}</strong>
+                </div>
+                <div>
+                    <span>Rocket in service:</span>
+                    <strong>${service}</strong>
+                </div>
+                <div>
+                    <span>Number of stages:</span>
+                    <strong>${stages}</strong>
+                </div>
+                <div>
+                    <span>Number of boosters:</span>
+                    <strong>${boosters}</strong>
+                </div>
+                <div>
+                    <span>Landing legs:</span>
+                    <strong>${landing_legs}</strong>
+                </div>
+                <div>
+                    <span>Leg material:</span>
+                    <strong>${material}</strong>
                 </div>
             </div>
         </div>

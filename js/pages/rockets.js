@@ -30,7 +30,8 @@ export async function updatePage(page) {
             updateDescription(item.id, item.description, item.first_stage.reusable, item.first_stage.fuel_amount_tons, item.first_stage.engines, 
                 item.second_stage.reusable, item.second_stage.fuel_amount_tons, item.second_stage.engines, item.first_flight, item.cost_per_launch, 
                 item.active);
-            updateSectionInformation2(item.country);
+            updateSectionInformation2(item.country, item.type, item.active, item.stages, item.boosters, item.landing_legs.number,
+                item.landing_legs.material,);
         });
 
         loadingElements.forEach(element => {
