@@ -1,5 +1,5 @@
 import { fetchAllRocketsData, fetchSingleRocketData } from '../api.js';
-import { updateHeaderTitle, updateInformation2, updateDescription, updateSectionInformation2, updateImage, updateSectionInformation3, updatePagination } from '../UI/rocketsUI.js';
+import { updateHeaderTitle, updateInformation2, updateDescription, updateSectionInformation2, updateImage, updateSectionInformation3, updateSectionInformation1, updatePagination } from '../UI/rocketsUI.js';
 
 export async function updatePage(page) {
     const loadingElements = document.querySelectorAll('.load');
@@ -11,12 +11,14 @@ export async function updatePage(page) {
         const allRocketsData = await fetchAllRocketsData();
         const maxWeight = Math.max(...allRocketsData.docs.map(rocket => rocket.mass.kg));
         const maxLEOPayload = Math.max(...allRocketsData.docs.map(rocket => rocket.payload_weights[0].kg));
-        console.log('Max payload:', maxLEOPayload);
         const maxHeight = Math.max(...allRocketsData.docs.map(rocket => rocket.height.meters));
         const maxDiameter = Math.max(...allRocketsData.docs.map(rocket => rocket.diameter.meters));
         const maxShieldDiameter = Math.max(...allRocketsData.docs.map(rocket => rocket.second_stage.payloads.composite_fairing.diameter.meters));
         const maxShieldHeight = Math.max(...allRocketsData.docs.map(rocket => rocket.second_stage.payloads.composite_fairing.height.meters));
-        // console.log('Max weight:', maxWeight);
+        const maxTSL = Math.max(...allRocketsData.docs.map(rocket => rocket.engines.thrust_sea_level.kN));
+        const maxTV = Math.max(...allRocketsData.docs.map(rocket => rocket.engines.thrust_vacuum.kN));
+
+        console.log('Max TSL:', maxTSL);
 
         const singleRocketData = await fetchSingleRocketData(page);
         singleRocketData.docs.forEach(item => {
@@ -35,6 +37,8 @@ export async function updatePage(page) {
             updateImage(item.flickr_images);
             updateSectionInformation3(item.success_rate_pct, item.engines.type, item.engines.engine_loss_max, item.engines.layout, item.engines.number,
                 item.engines.propellant_1, item.engines.propellant_2);
+            updateSectionInformation1(item.engines.thrust_sea_level.kN, maxTSL, item.engines.thrust_sea_level.lbf, maxTV, item.engines.thrust_sea_level.kN,
+                item.engines.thrust_vacuum.lbf)
         });
 
         loadingElements.forEach(element => {

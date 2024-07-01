@@ -39,7 +39,7 @@ body, html {
 #rocketImageCenter{
     position: absolute;
     top: 10%;
-    left: 39.5%;
+    left: 37%;
     width: 20vw;
     
     
@@ -75,6 +75,7 @@ body, html {
     align-items: center;
     text-transform: uppercase;
     font-weight: bold;
+    margin-right: 90px;
 }
 .load{
     background: linear-gradient(120deg, #ffffff0e 30%, #ffffff23 38%, #f0f0f032 40%, #e5e5e50c 40%);

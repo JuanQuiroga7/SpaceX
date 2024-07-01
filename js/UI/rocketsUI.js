@@ -338,6 +338,44 @@ export function updateSectionInformation3(success_rate, engine_type, engine_loss
     `;
 }
 
+// Funcion para insertar section 1 - carruseles en el DOM
+export function updateSectionInformation1(TSL_kN, maxTSL, TSL_lbf, maxTV, TV_kN, TV_lbf) {
+    const sectionInformation1 = document.getElementById('section__information__1');
+    let percentage_1 = ((TSL_kN * 100) / maxTSL).toFixed(2);
+    let percentage_2 = ((TV_kN * 100) / maxTV).toFixed(2);
+
+    // console.log('Percentage:', percentage_1);
+
+    sectionInformation1.innerHTML = `
+        <div class="carousel__item">
+            <div class="item__progress__bar" style="background: radial-gradient(closest-side, #1d1f38 85%, transparent 85% 100%), conic-gradient(var(--color--three) ${percentage_1}%, transparent 0);">
+                <div class="progress__value">
+                    <strong>Atmospheric acceleration</strong>
+                    <small>${percentage_1}%</small>
+                    <small>
+                        ${TSL_kN} kN
+                        <br>
+                        ${TSL_lbf} lbf
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="carousel__item">
+            <div class="item__progress__bar" style="background: radial-gradient(closest-side, #1d1f38 85%, transparent 85% 100%), conic-gradient(var(--color--three) ${percentage_2}%, transparent 0);">
+                <div class="progress__value">
+                    <strong>Speed in space</strong>
+                    <small>${percentage_2}%</small>
+                    <small>
+                        ${TV_kN} kN
+                        <br>
+                        ${TV_lbf} lbf
+                    </small>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 
 // Funcion para insertar la paginacion en el DOM
 export function updatePagination(data, updatePage) {
