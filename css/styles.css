@@ -385,6 +385,7 @@ h3{
     display: flex;
     overflow-x: auto;
     align-items: center;
+    scrollbar-color: transparent transparent;
 }
 
 .section__image>.carousel__item {

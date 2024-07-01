@@ -1,5 +1,5 @@
 import { fetchAllRocketsData, fetchSingleRocketData } from '../api.js';
-import { updateHeaderTitle, updateInformation2, updateDescription, updateSectionInformation2, updatePagination } from '../UI/rocketsUI.js';
+import { updateHeaderTitle, updateInformation2, updateDescription, updateSectionInformation2, updateImage, updatePagination } from '../UI/rocketsUI.js';
 
 export async function updatePage(page) {
     const loadingElements = document.querySelectorAll('.load');
@@ -32,6 +32,7 @@ export async function updatePage(page) {
                 item.active);
             updateSectionInformation2(item.country, item.type, item.active, item.stages, item.boosters, item.landing_legs.number,
                 item.landing_legs.material,);
+            updateImage(item.flickr_images)
         });
 
         loadingElements.forEach(element => {

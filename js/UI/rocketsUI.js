@@ -264,6 +264,23 @@ export function updateSectionInformation2(country_name, Type, active, stages, bo
     `;
 }
 
+// Funcion para insertar seccion de imagenes del cohete en el DOM
+export function updateImage(images){
+    const rocketImage = document.getElementById('section__image')
+    let imagesHTML = '';
+    images.forEach(image => {
+        imagesHTML += `
+            <div class="carousel__item">
+                <img src="${image}" referrerpolicy="no-referrer"">
+            </div>
+        `;
+    });
+console.log(imagesHTML)
+    rocketImage.innerHTML = `
+        ${imagesHTML}
+    `;
+}
+
 
 // Funcion para insertar la paginacion en el DOM
 export function updatePagination(data, updatePage) {
