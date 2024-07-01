@@ -275,9 +275,66 @@ export function updateImage(images){
             </div>
         `;
     });
-console.log(imagesHTML)
     rocketImage.innerHTML = `
         ${imagesHTML}
+    `;
+}
+
+// Funcion para insertar section 3 en el DOM
+export function updateSectionInformation3(success_rate, engine_type, engine_loss_max, engine_layout, engine_number, fuel_1, fuel_2) {
+    let sectionInformation3 = document.getElementById('section__information__3');
+    let engineLoss;
+    if (engine_loss_max === null) {
+        engineLoss = "0";
+    } else {
+        engineLoss = engine_loss_max;
+    }
+    let layout;
+    if (engine_layout === null) {
+        layout = "unknown";
+    } else {
+        layout = engine_layout;
+    }
+    sectionInformation3.innerHTML = `
+        <div id="sucess_rate_rocket">
+            <div class="carousel__item">
+                <div class="item__progress__bar" style="background: radial-gradient(closest-side, #1d1f38 85%, transparent 85% 100%), conic-gradient(var(--color--three) ${success_rate}%, transparent 0);">
+                    <div class="progress__value">
+                        <strong>Success Rate </strong>
+                        <span>${success_rate}%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="information__table__2" class="information__table__2">
+            <h3>Engine Information</h3>
+            <hr>
+            <div class="table__container__1">
+                <div>
+                    <span>Type:</span>
+                    <strong>${engine_type}</strong>
+                </div>
+                <div>
+                    <span>Engine loss max:</span>
+                    <strong>${engineLoss}</strong>
+                </div>
+                <div>
+                    <span>Engine layout:</span>
+                    <strong>${layout}</strong>
+                </div>
+                <div>
+                    <span>Number of engines:</span>
+                    <strong>${engine_number}</strong>
+                </div>
+                <div>
+                    <span>Propellant 1 fuel:</span>
+                    <strong>${fuel_1}</strong>
+                </div>
+                <div>
+                    <span>Propellant 2 fuel:</span>
+                    <strong>${fuel_2}</strong>
+                </div>
+        </div>
     `;
 }
 
