@@ -175,6 +175,90 @@ export function updateTableRight(capsule_serial, water_landings, land_landings) 
     `;
 }
 
+// Funcion para agregar data en seccion central del DOM
+export function updateCentralData(launches, last_update){
+    const centralData = document.getElementById('section__image');
+    let launchesHTML = '';
+    launches.forEach(launch => {
+        launchesHTML += `
+            <tr>
+                <td style="font-weight: bold">${launch.name}</td>
+            </tr>
+        `;
+    });
+
+    centralData.innerHTML = `
+        <style>
+            #section__image {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--color--five);
+            }
+        </style>
+        <h1 style="color: var(--color--five); margin-inline: auto; margin-top: 20px">LAUNCHES</h1>
+        <hr style="color: var(--color--five); margin-block: 6px; width: 80%">
+        <table>
+            <tbody>
+                ${launchesHTML}
+            </tbody>
+        </table>
+        <style>
+                *{
+                    padding: 0;
+                    margin: 0;
+                    box-sizing: border-box;
+                }
+                
+                
+                .last__update{
+                    
+                    margin-top: 20px;
+                    width: 100%;
+                    border: 1px solid #55588a;
+                    border-radius: 10px;
+                }
+                
+                .title__last__upt{
+                    gap: 5px;
+                    display: flex;
+                    justify-content: center;
+                    background-color: #1d1f38;
+                    color: var(--color--five);
+                    padding: 5px;
+                    border-radius: 10px 10px 0px 0px;
+                    
+                }
+
+                h2{
+                    font-size: 20px;
+                }
+
+                i{
+                    font-size: 20px;
+                    color: var(--color--five);
+                }
+                
+                .value__last__upt{
+                    display: flex;
+                    justify-content: center;
+                    padding: 7px;
+                }
+        </style>
+        <div class="last__update">
+            <div class="title__last__upt">
+                <i class="bi bi-activity"></i>
+                <h2>LAST UPDATE</h2>
+            </div>
+            <div class="value__last__upt">
+                <p>${last_update}</p>
+            </div>
+        </div>
+    `;
+}
+
+
 // Funcion para paginacion con flechas para cambio de pagina
 export function updatePagination(currentPage, totalPages, updatePage) {
     const paginationDiv = document.getElementById('paginacion');

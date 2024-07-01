@@ -168,65 +168,70 @@
 </html>
 
 
-<div id="sucess_rate_rocket">
-    <style>
-            *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-      
-    .table__property{
-
-        width: 90%;
-        height: 23%;
-      
-      }
-    #country_rocket, #sucess_rate_rocket{
-        display: flex;
+<style>
+    #section__image {
+        display:flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        gap: 15px
-      }
+        justify-content: center;
+        color: var(--color--five);
+    }
+</style>
+<h1 style="color: var(--color--five); margin-inline: auto; margin-top: 20px">LAUNCHES</h1>
+<hr style="color: var(--color--five); margin-block: 6px; width: 80%">
+<table>
+    <tbody>
+        
+    </tbody>
+</table>
+<style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        .last__update{
+            
+            margin-top: 20px;
+            width: 100%;
+            border: 1px solid #55588a;
+            border-radius: 10px;
+        }
+        
+        .title__last__upt{
+            gap: 5px;
+            display: flex;
+            justify-content: center;
+            background-color: #1d1f38;
+            color: var(--color--five);
+            padding: 5px;
+            border-radius: 10px 10px 0px 0px;
+            
+        }
 
-    h3{
-        padding: 0
-    }
-    .title{
-      
-        height: 60%;
-        border-radius: 15px 15px 0px 0px;
-        background-color: #1d1f38;
-        color: #ffff;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        border: 1px solid #55588a
-    }
-      
-      .value{
-        height: 50%;
-        background-color: #55588a;
-        border-radius: 0px 0px 15px 15px;
-        color: #ffff;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      
-    }
-    </style>
-    <div class="table__property">
-        <div class="title">
-            <h3>Serial of the capsule</h3>
-        </div>
-        <div class="value">
-            <p></p>
-        </div>
+        h2{
+            font-size: 20px;
+        }
+
+        i{
+            font-size: 20px;
+            color: var(--color--five);
+        }
+        
+        .value__last__upt{
+            display: flex;
+            justify-content: center;
+            padding: 7px;
+        }
+</style>
+<div class="last__update">
+    <div class="title__last__upt">
+        <i class="bi bi-activity"></i>
+        <h2>LAST UPDATE</h2>
+    </div>
+    <div class="value__last__upt">
+        <p></p>
     </div>
 </div>

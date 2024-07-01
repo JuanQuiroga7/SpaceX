@@ -61,6 +61,7 @@ export function fetchSingleCapsuleData(page) {
       options: {
         page,
         limit: 1,
+        populate: ['launches']
       },
     }),
   })

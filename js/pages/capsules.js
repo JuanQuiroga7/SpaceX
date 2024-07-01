@@ -1,5 +1,5 @@
 import { fetchSingleCapsuleData } from '../api.js';
-import { updateHeaderTitle, updateTableLeft, updateTableRight, updatePagination } from '../UI/capsulesUI.js';
+import { updateHeaderTitle, updateTableLeft, updateTableRight, updateCentralData, updatePagination } from '../UI/capsulesUI.js';
 
 export async function updatePage(page) {
     const elementsToClear = [
@@ -30,6 +30,7 @@ export async function updatePage(page) {
             updateHeaderTitle(item);
             updateTableLeft(item.id, item.status, item.type);
             updateTableRight(item.serial, item.water_landings, item.land_landings);
+            updateCentralData(item.launches, item.last_update);
         });
 
         loadingElements.forEach(element => {
