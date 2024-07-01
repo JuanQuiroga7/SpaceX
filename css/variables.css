@@ -14,3 +14,12 @@
     --layout-description-container-x: 10px;
     --layout-description-container-y: 10px;
 }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../storage/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: 'Bitter';
+    src: url(../storage/fonts/Bitter-Regular.ttf);
+}
