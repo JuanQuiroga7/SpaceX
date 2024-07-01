@@ -90,6 +90,91 @@ export function updateTableLeft(capsule_ID, capsule_status, capsule_type) {
     `;
 }
 
+// Funcion para agregar tabla seccion derecha en el DOM
+export function updateTableRight(capsule_serial, water_landings, land_landings) {
+    const tableRight = document.getElementById('section__information__3');
+    tableRight.innerHTML = `
+    <div id="sucess_rate_rocket">
+        <style>
+                *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .table__property{
+
+            width: 90%;
+            height: 23%;
+        
+        }
+        #country_rocket, #sucess_rate_rocket{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px
+        }
+
+        h3{
+            padding: 0
+        }
+        .title{
+        
+            height: 60%;
+            border-radius: 15px 15px 0px 0px;
+            background-color: #1d1f38;
+            color: #ffff;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #55588a
+        }
+        
+        .value{
+            height: 50%;
+            background-color: #55588a;
+            border-radius: 0px 0px 15px 15px;
+            color: #ffff;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        </style>
+        <div class="table__property">
+            <div class="title">
+                <h3>Serial of the capsule</h3>
+            </div>
+            <div class="value">
+                <p>${capsule_serial}</p>
+            </div>
+        </div>
+        <div class="table__property">
+            <div class="title">
+                <h3>Water landings</h3>
+            </div>
+            <div class="value">
+                <p>${water_landings}</p>
+            </div>
+        </div>
+        <div class="table__property">
+            <div class="title">
+                <h3>Land landings</h3>
+            </div>
+            <div class="value">
+                <p>${land_landings}</p>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
 // Funcion para paginacion con flechas para cambio de pagina
 export function updatePagination(currentPage, totalPages, updatePage) {
     const paginationDiv = document.getElementById('paginacion');
