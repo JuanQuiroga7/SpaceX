@@ -191,6 +191,37 @@ export function updateDescription(rocketId, rocketDescription, Stage1_reusable, 
 }
 
 
+// Funcion para insertar section 2 en el DOM
+export function updateSectionInformation2(country_name) {
+    const sectionInformation2 = document.getElementById('section__information__2');
+    let flagHTML = '';
+    if (country_name === 'United States') {
+        flagHTML = `
+        <div class="flagCountry">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/united-states-flag-pole-5082845-4234133.png" alt="">
+        </div>
+        `;
+    } else {
+        flagHTML = `
+        <div class="flagCountry">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/marshall-islands-flag-pole-5082826-4234114.png?f=webp" alt="">
+        </div>
+        `;
+    }
+    sectionInformation2.innerHTML = `
+        <div id="country_rocket">
+            <div class="divCountry">
+                ${flagHTML}
+                <div class="informationCountry">
+                    <h2>Country of origin</h2>
+                    <p>${country_name}</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+
 // Funcion para insertar la paginacion en el DOM
 export function updatePagination(data, updatePage) {
     const paginationDiv = document.getElementById('paginacion');
