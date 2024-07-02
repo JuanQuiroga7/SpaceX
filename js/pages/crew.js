@@ -1,5 +1,5 @@
 import { fetchSingleCrewData } from '../api.js';
-import { updateHeaderTitle, updateTableLeft, updateCentralData, updatePagination } from '../UI/crewUI.js';
+import { updateHeaderTitle, updateTableLeft, updateCentralData, updateTableRight, updatePagination } from '../UI/crewUI.js';
 
 
 export async function updatePage(page) {
@@ -31,6 +31,7 @@ export async function updatePage(page) {
             updateHeaderTitle(item);
             updateTableLeft(item.agency, item.launches[0].name)
             updateCentralData(item.wikipedia, item.image);
+            updateTableRight(item.status, item.id)
         });
 
         loadingElements.forEach(element => {
