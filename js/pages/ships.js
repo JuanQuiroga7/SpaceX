@@ -1,5 +1,5 @@
 import { fetchSingleShipData } from '../api.js';
-import { updateHeaderTitle, updateLeftSideBar, updateTableLeft, updateCentralImage, updatePagination } from '../UI/shipsUI.js';
+import { updateHeaderTitle, updateLeftSideBar, updateTableLeft, updateCentralImage, updateTableRight, updateRightSideBar, updatePagination } from '../UI/shipsUI.js';
 
 
 export async function updatePage(page) {
@@ -32,6 +32,8 @@ export async function updatePage(page) {
             updateLeftSideBar(item.imo, item.mmsi, item.abs, item.link, item.mass_lbs, item.mass_kg);
             updateTableLeft(item.type, item.legacy_id, item.class);
             updateCentralImage(item.image);
+            updateTableRight(item.year_built, item.home_port, item.id);
+            updateRightSideBar(item.launches);
         });
 
         loadingElements.forEach(element => {

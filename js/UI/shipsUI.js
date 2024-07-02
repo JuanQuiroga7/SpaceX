@@ -193,6 +193,110 @@ export function updateCentralImage(image) {
 
 }
 
+// Funcion para agregar tabla derecha
+export function updateTableRight(year_built, port, ship_id) {
+    const tableRight = document.getElementById('section__information__3');
+    tableRight.innerHTML = `
+    <div id="sucess_rate_rocket">
+        <style>
+                *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .table__property{
+
+            width: 90%;
+            height: 23%;
+        
+        }
+        #country_rocket, #sucess_rate_rocket{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px
+        }
+
+        h3{
+            padding: 0
+        }
+        .title{
+        
+            height: 60%;
+            border-radius: 15px 15px 0px 0px;
+            background-color: #1d1f38;
+            color: #ffff;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #55588a
+        }
+        
+        .value{
+            height: 50%;
+            background-color: #55588a;
+            border-radius: 0px 0px 15px 15px;
+            color: #ffff;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        </style>
+        <div class="table__property">
+            <div class="title">
+                <h3>Year built</h3>
+            </div>
+            <div class="value">
+                <p>${year_built}</p>
+            </div>
+        </div>
+        <div class="table__property">
+            <div class="title">
+                <h3>Home port</h3>
+            </div>
+            <div class="value">
+                <p>${port}</p>
+            </div>
+        </div>
+        <div class="table__property">
+            <div class="title">
+                <h3>Ship ID</h3>
+            </div>
+            <div class="value">
+                <p>${ship_id}</p>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+// Funcion para agregar rigth side bar
+export function updateRightSideBar(launches) {
+    const leftSideBar = document.getElementById('information__2');
+    let launchesHTML = '';
+    launches.forEach(launch => {
+        launchesHTML += `
+            <p style="font-weight: bold; color: #ffff; margin-right: 20px; font-size: 15px">${launch.name}</p>
+        `;
+    });
+
+    leftSideBar.innerHTML = `
+        <h1 style="color: var(--color--five); margin-inline: auto; margin-top: 20px">LAUNCHES</h1>
+        <hr style="color: var(--color--five); margin-block: 6px; width: 80%">
+        <div id="launchesBox" style="height: 700px; overflow-y: scroll; width: 80%">
+            ${launchesHTML}
+        </div>
+    `;
+}
+
 // Funcion para paginacion de la data
 export function updatePagination(currentPage, totalPages, updatePage) {
     const paginationDiv = document.getElementById('paginacion');
