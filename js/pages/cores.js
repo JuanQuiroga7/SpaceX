@@ -1,5 +1,5 @@
 import { fetchSingleCoreData } from '../api.js';
-import { updateHeaderTitle, updateTableLeft, updateTableRight, updatePagination } from '../UI/coresUI.js';
+import { updateHeaderTitle, updateTableLeft, updateTableRight, updateCentralData, updatePagination } from '../UI/coresUI.js';
 
 
 export async function updatePage(page) {
@@ -31,6 +31,7 @@ export async function updatePage(page) {
             updateHeaderTitle(item);
             updateTableLeft(item.id, item.status, item.serial);
             updateTableRight(item.asds_attempts, item.asds_landings, item.reuse_count);
+            updateCentralData(item.launches, item.last_update);
         });
 
         loadingElements.forEach(element => {
