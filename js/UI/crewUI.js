@@ -81,6 +81,76 @@ export function updateTableLeft(member_agency, member_launches) {
     `;
 }
 
+// Funcion para agregar data en centro de la pagina
+export function updateCentralData(wikipedia, image){
+    const centralData = document.getElementById('section__image');
+    centralData.innerHTML = `
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                color: var(--color--five)
+            }
+
+            #section__image{
+
+                gap: 10px;
+                margin-top: 90px;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            
+            .wikipedia__bx{
+                
+                margin-top: 20px;
+                width: 100%;
+                border: 1px solid #55588a;
+                border-radius: 10px;
+            }
+            
+            .title__wikipedia{
+                gap: 5px;
+                display: flex;
+                justify-content: center;
+                background-color: #1d1f38;
+                padding: 5px;
+                border-radius: 10px 10px 0px 0px;
+                width: 100%
+                
+            }
+
+            h2{
+                font-size: 20px;
+            }
+
+            i{
+                font-size: 20px;
+            }
+            
+            .value__wikipedia{
+                display: flex;
+                justify-content: center;
+                padding: 7px;
+            }
+    </style>
+    <div class="wikipedia__bx">
+    <div class="title__wikipedia">
+        <i class="bi bi-wikipedia"></i>
+        <h2>Wikipedia</h2>
+    </div>
+    <div class="value__wikipedia">
+        <a href="${wikipedia}">Click here for more information</a>
+    </div>
+    </div>
+    <img style="width: auto; height: 300px;" src="${image}" referrerpolicy="no-referrer" alt="">
+    `;
+}
+
+// Funcion para agregar tabla seccion derecha en el DOM
+
 
 // Funcion para paginacion de la data
 export function updatePagination(currentPage, totalPages, updatePage) {
