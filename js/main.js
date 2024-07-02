@@ -2,6 +2,7 @@ import { updatePage as updateRocketsPage } from './pages/rockets.js';
 import { updatePage as updateCapsulesPage } from './pages/capsules.js';
 import { updatePage as updateCrewPage } from './pages/crew.js';
 import { updatePage as updateLaunchesPage } from './pages/launches.js';
+import { updatePage as updateCoresPage } from './pages/cores.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -32,4 +33,10 @@ document.getElementById('launches').addEventListener('click', (event) => {
     event.preventDefault();
     updateLaunchesPage(1);
     updateSelectedNavItem('launches');
+});
+
+document.getElementById('cores').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateCoresPage(1);
+    updateSelectedNavItem('cores');
 });
