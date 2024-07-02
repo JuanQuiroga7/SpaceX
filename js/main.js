@@ -3,6 +3,7 @@ import { updatePage as updateCapsulesPage } from './pages/capsules.js';
 import { updatePage as updateCrewPage } from './pages/crew.js';
 import { updatePage as updateLaunchesPage } from './pages/launches.js';
 import { updatePage as updateCoresPage } from './pages/cores.js';
+import { updatePage as updateLandpadsPage } from './pages/landpads.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -39,4 +40,10 @@ document.getElementById('cores').addEventListener('click', (event) => {
     event.preventDefault();
     updateCoresPage(1);
     updateSelectedNavItem('cores');
+});
+
+document.getElementById('landspads').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateLandpadsPage(1);
+    updateSelectedNavItem('landspads');
 });
