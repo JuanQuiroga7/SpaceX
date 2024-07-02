@@ -88,3 +88,23 @@ export function fetchSingleCrewData(page) {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+// Funcion para traer un solo lanzamiento por pagina
+export function fetchSingleLaunchData(page) {
+  return fetch('https://api.spacexdata.com/v4/launches/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        page,
+        limit: 1,
+        // populate: ['rocket', 'crew', 'capsules']
+      },
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}
