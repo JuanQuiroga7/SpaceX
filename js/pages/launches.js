@@ -1,5 +1,5 @@
 import { fetchSingleLaunchData } from '../api.js';
-import { updateHeaderTitle, updateLeftSideBar, updatePagination } from '../UI/launchesUI.js';
+import { updateHeaderTitle, updateLeftSideBar, updateTableLeft, updateCentralImage, updatePagination } from '../UI/launchesUI.js';
 
 
 export async function updatePage(page) {
@@ -30,6 +30,8 @@ export async function updatePage(page) {
             console.log('Launch item:', item);
             updateHeaderTitle(item);
             updateLeftSideBar(item.links.webcast, item.static_fire_date_unix, item.success, item.links.article, item.links.wikipedia)
+            updateTableLeft(item.id, item.flight_number, item.date_utc);
+            updateCentralImage(item.links.patch.large)
         });
 
         loadingElements.forEach(element => {
