@@ -148,3 +148,23 @@ export function fetchSingleLandpadData(page) {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+// Funcion para traer un solo ship por pagina
+export function fetchSingleShipData(page) {
+  return fetch('https://api.spacexdata.com/v4/ships/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        page,
+        limit: 1,
+        populate: ['launches']
+      },
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}

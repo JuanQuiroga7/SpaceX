@@ -4,6 +4,7 @@ import { updatePage as updateCrewPage } from './pages/crew.js';
 import { updatePage as updateLaunchesPage } from './pages/launches.js';
 import { updatePage as updateCoresPage } from './pages/cores.js';
 import { updatePage as updateLandpadsPage } from './pages/landpads.js';
+import { updatePage as updateShipsPage } from './pages/ships.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -47,3 +48,10 @@ document.getElementById('landspads').addEventListener('click', (event) => {
     updateLandpadsPage(1);
     updateSelectedNavItem('landspads');
 });
+
+document.getElementById('ships').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateShipsPage(1);
+    updateSelectedNavItem('ships');
+});
+
