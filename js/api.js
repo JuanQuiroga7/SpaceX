@@ -68,3 +68,23 @@ export function fetchSingleCapsuleData(page) {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+// Funcion para traer un solo integrante de crew por pagina
+export function fetchSingleCrewData(page) {
+  return fetch('https://api.spacexdata.com/v4/crew/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        page,
+        limit: 1,
+        populate: ['launches']
+      },
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}
