@@ -101,10 +101,11 @@ export function fetchSingleLaunchData(page) {
       options: {
         page,
         limit: 1,
-        // populate: ['rocket', 'crew', 'capsules']
+        populate: ['launchpad', 'rocket', 'cores.core']
       },
     }),
   })
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+

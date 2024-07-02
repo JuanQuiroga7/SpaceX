@@ -1,5 +1,5 @@
 import { fetchSingleLaunchData } from '../api.js';
-import { updateHeaderTitle, updateLeftSideBar, updateTableLeft, updateCentralImage, updatePagination } from '../UI/launchesUI.js';
+import { updateHeaderTitle, updateLeftSideBar, updateTableLeft, updateCentralImage, updateTableRight, updateLaunchDetails, updatePagination } from '../UI/launchesUI.js';
 
 
 export async function updatePage(page) {
@@ -32,6 +32,8 @@ export async function updatePage(page) {
             updateLeftSideBar(item.links.webcast, item.static_fire_date_unix, item.success, item.links.article, item.links.wikipedia)
             updateTableLeft(item.id, item.flight_number, item.date_utc);
             updateCentralImage(item.links.patch.large)
+            updateTableRight(item.launchpad.full_name, item.rocket.name, item.cores[0].core.serial); 
+            updateLaunchDetails(item.details);
         });
 
         loadingElements.forEach(element => {
