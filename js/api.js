@@ -200,3 +200,22 @@ export function fetchSingleDragonData(page) {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+// Funcion para traer una sola historia por pagina
+export function fetchSingleHistoryData(page) {
+  return fetch('https://api.spacexdata.com/v4/history/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        page,
+        limit: 1,
+      },
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}
