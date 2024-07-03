@@ -9,6 +9,7 @@ import { updatePage as updateCompanyPage } from './pages/company.js';
 import { updatePage as updateDragonsPage } from './pages/dragons.js';
 import { updatePage as updateHistoryPage } from './pages/history.js';
 import { updatePage as updateLaunchpadsPage } from './pages/launchpads.js';
+import { updatePage as updatePayloadsPage } from './pages/payloads.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -81,4 +82,10 @@ document.getElementById('launchpads').addEventListener('click', (event) => {
     event.preventDefault();
     updateLaunchpadsPage(1);
     updateSelectedNavItem('launchpads');
+});
+
+document.getElementById('payloads').addEventListener('click', (event) => {
+    event.preventDefault();
+    updatePayloadsPage(1);
+    updateSelectedNavItem('payloads');
 });
