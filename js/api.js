@@ -168,3 +168,17 @@ export function fetchSingleShipData(page) {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+
+// Funcion para traer dataa de la compañia
+export function fetchCompanyInfo() {
+  return fetch('https://api.spacexdata.com/v4/company')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .catch(error => console.error('Error:', error));
+}
+

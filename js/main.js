@@ -5,6 +5,7 @@ import { updatePage as updateLaunchesPage } from './pages/launches.js';
 import { updatePage as updateCoresPage } from './pages/cores.js';
 import { updatePage as updateLandpadsPage } from './pages/landpads.js';
 import { updatePage as updateShipsPage } from './pages/ships.js';
+import { updatePage as updateCompanyPage } from './pages/company.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -55,3 +56,8 @@ document.getElementById('ships').addEventListener('click', (event) => {
     updateSelectedNavItem('ships');
 });
 
+document.getElementById('company').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateCompanyPage();
+    updateSelectedNavItem('company');
+});
