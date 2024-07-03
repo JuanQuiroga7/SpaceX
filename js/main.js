@@ -8,6 +8,7 @@ import { updatePage as updateShipsPage } from './pages/ships.js';
 import { updatePage as updateCompanyPage } from './pages/company.js';
 import { updatePage as updateDragonsPage } from './pages/dragons.js';
 import { updatePage as updateHistoryPage } from './pages/history.js';
+import { updatePage as updateLaunchpadsPage } from './pages/launchpads.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -74,4 +75,10 @@ document.getElementById('history').addEventListener('click', (event) => {
     event.preventDefault();
     updateHistoryPage(1);
     updateSelectedNavItem('history');
+});
+
+document.getElementById('launchpads').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateLaunchpadsPage(1);
+    updateSelectedNavItem('launchpads');
 });
