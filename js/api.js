@@ -182,3 +182,21 @@ export function fetchCompanyInfo() {
     .catch(error => console.error('Error:', error));
 }
 
+// Funcion para traer un solo dragon por pagina
+export function fetchSingleDragonData(page) {
+  return fetch('https://api.spacexdata.com/v4/dragons/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        page,
+        limit: 1,
+      },
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}
