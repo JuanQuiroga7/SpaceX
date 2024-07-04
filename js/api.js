@@ -259,3 +259,19 @@ export function fetchSinglePayloadData(page) {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+// Funcion para traer un solo roadster por pagina
+export function fetchSingleRoadsterData() {
+  return fetch('https://api.spacexdata.com/v4/roadster/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {},
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}

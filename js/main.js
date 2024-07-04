@@ -10,6 +10,7 @@ import { updatePage as updateDragonsPage } from './pages/dragons.js';
 import { updatePage as updateHistoryPage } from './pages/history.js';
 import { updatePage as updateLaunchpadsPage } from './pages/launchpads.js';
 import { updatePage as updatePayloadsPage } from './pages/payloads.js';
+import { updatePage as updateRoadsterPage } from './pages/roadster.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -88,4 +89,10 @@ document.getElementById('payloads').addEventListener('click', (event) => {
     event.preventDefault();
     updatePayloadsPage(1);
     updateSelectedNavItem('payloads');
+});
+
+document.getElementById('roaster').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateRoadsterPage();
+    updateSelectedNavItem('roaster');
 });
