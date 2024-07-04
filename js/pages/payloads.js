@@ -1,5 +1,5 @@
 import { fetchSinglePayloadData } from '../api.js';
-import { updateHeaderTitle, updateTableLeft, updateTableRight, updatePagination } from '../UI/payloadsUI.js';
+import { updateHeaderTitle, updateTableLeft, updateTableRight, updateCentralSection, updatePagination } from '../UI/payloadsUI.js';
 
 export async function updatePage(page) {
     const elementsToClear = [
@@ -30,6 +30,7 @@ export async function updatePage(page) {
             updateHeaderTitle(item);
             updateTableLeft(item.type, item.launch.name, item.reused);
             updateTableRight(item.orbit, item.reference_system, item.regime);
+            updateCentralSection(item.id);
         });
 
         loadingElements.forEach(element => {

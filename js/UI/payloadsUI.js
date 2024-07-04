@@ -244,6 +244,37 @@ export function updateTableRight(orbit, reference_system, regime) {
     `;
 }
 
+// Funcion para agregar seccion central en el DOM
+export function updateCentralSection(payload_id) {
+    const centralSection = document.getElementById('section__image');
+    centralSection.innerHTML = `
+        <style>
+
+            #section__image {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--color--five);
+            }
+
+            #textDetails {
+                text-align: center;
+            }
+
+        </style>
+        <h1 style="color: var(--color--five); margin-inline: auto; margin-top: 20px">Payload ID</h1>
+        <hr style="color: var(--color--five); margin-block: 6px; width: 80%">
+        <table>
+            <tbody>
+                <tr>
+                    <td id="textDetails" style="font-weight: bold">${payload_id}</td>
+                </tr>
+            </tbody>
+        </table>
+    `;
+}
+
 
 // Funcion para agregar paginacion al DOM
 export function updatePagination(currentPage, totalPages, updatePage) {
