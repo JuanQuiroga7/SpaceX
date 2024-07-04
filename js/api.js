@@ -275,3 +275,23 @@ export function fetchSingleRoadsterData() {
     .then(response => response.json())
     .catch(error => console.error(error));
 }
+
+// Funcion para traer un solo starlink por pagina
+export function fetchSingleStarlinkData(page) {
+  return fetch('https://api.spacexdata.com/v4/starlink/query', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: {},
+      options: {
+        page,
+        limit: 1,
+        populate: ['launch']
+      },
+    }),
+  })
+    .then(response => response.json())
+    .catch(error => console.error(error));
+}

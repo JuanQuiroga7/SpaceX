@@ -11,6 +11,7 @@ import { updatePage as updateHistoryPage } from './pages/history.js';
 import { updatePage as updateLaunchpadsPage } from './pages/launchpads.js';
 import { updatePage as updatePayloadsPage } from './pages/payloads.js';
 import { updatePage as updateRoadsterPage } from './pages/roadster.js';
+import { updatePage as updateStarlinkPage } from './pages/starlink.js';
 import { updateSelectedNavItem } from './components/selectNav.js';
 
 
@@ -95,4 +96,10 @@ document.getElementById('roaster').addEventListener('click', (event) => {
     event.preventDefault();
     updateRoadsterPage();
     updateSelectedNavItem('roaster');
+});
+
+document.getElementById('starlink').addEventListener('click', (event) => {
+    event.preventDefault();
+    updateStarlinkPage(1);
+    updateSelectedNavItem('starlink');
 });
